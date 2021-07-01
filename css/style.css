@@ -8,3 +8,8 @@ footer {
     background-color: aqua;
     color: chartreuse;
 }
+main{
+    width: 800px;
+    text-align: center;
+    margin: auto;
+}
