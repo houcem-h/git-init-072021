@@ -11,8 +11,36 @@
 </head>
 
 <body>
-
-    <script src="js/main.js"></script>
+    <h1>VueJS</h1>
+    <div id="app">
+        <span v-bind:title="today">
+            Message: {{ msg }}
+        </span>
+        <!-- <p v-show="display"> -->
+        <p v-if="display">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis incidunt placeat
+            numquam minus veritatis
+            cupiditate, saepe aliquid ullam quos itaque. Aperiam nemo commodi tempora odit dolorem aliquid explicabo
+            voluptatem non.
+        </p>
+        <ul>
+            Supported languages:
+            <li v-for="lang in languages">
+                {{ lang }}
+            </li>
+        </ul>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                msg: "Welcome to 3W Academy - Vue JS session",
+                today: new Date().toLocaleDateString(),
+                display: false,
+                languages: ['HTML', 'CSS', 'PHP', 'JS']
+            }
+        });
+    </script>
 </body>
 
 </html>
