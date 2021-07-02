@@ -16,6 +16,10 @@
         <div v-bind:title="today">
             Message: {{ msg }}
         </div>
+        <br>
+        <input v-model="newMsg" type="text" placeholder="Your message here">
+        <button v-on:click="changeMessage">Add message</button>
+        <hr>
         <!-- <button v-on:click="display = !display">Toggle paragraph!</button> -->
         <button v-on:click="togglePar">Toggle paragraph!</button>
         <!-- <p v-show="display"> -->
@@ -25,6 +29,7 @@
             cupiditate, saepe aliquid ullam quos itaque. Aperiam nemo commodi tempora odit dolorem aliquid explicabo
             voluptatem non.
         </p>
+        <hr>
         <ul>
             Supported languages:
             <li v-for="lang in languages">
@@ -39,11 +44,15 @@
                 msg: "Welcome to 3W Academy - Vue JS session",
                 today: new Date().toLocaleDateString(),
                 display: false,
-                languages: ['HTML', 'CSS', 'PHP', 'JS']
+                languages: ['HTML', 'CSS', 'PHP', 'JS'],
+                newMsg: ""
             },
             methods: {
                 togglePar: function () {
                     this.display = !this.display
+                },
+                changeMessage: function () {
+                    this.msg = this.newMsg;
                 }
             }
         });
