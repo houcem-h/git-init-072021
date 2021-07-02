@@ -16,7 +16,8 @@
         <div v-bind:title="today">
             Message: {{ msg }}
         </div>
-        <button v-on:click="display = !display">Toggle paragraph!</button>
+        <!-- <button v-on:click="display = !display">Toggle paragraph!</button> -->
+        <button v-on:click="togglePar">Toggle paragraph!</button>
         <!-- <p v-show="display"> -->
         <p v-if="display">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis incidunt placeat
@@ -39,6 +40,11 @@
                 today: new Date().toLocaleDateString(),
                 display: false,
                 languages: ['HTML', 'CSS', 'PHP', 'JS']
+            },
+            methods: {
+                togglePar: function () {
+                    this.display = !this.display
+                }
             }
         });
     </script>
